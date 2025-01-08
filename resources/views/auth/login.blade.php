@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/logins/login-12/assets/css/login-12.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <title>Login</title>
-    <style>
-        * {
-            transition: all 0.6s;
-        }
-    </style>
 </head>
 
 <body>
@@ -22,9 +19,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="mb-5">
-                        <h2 class="display-5 fw-bold text-center">Sign in</h2>
-                        <p class="text-center m-0">Don't have an account? <a href="{{ route('register') }}">Sign up</a>
-                        </p>
+                        <h2 class="display-5 fw-bold text-center">LLDIKIT Wilayah I</h2>
+                        <p class="text-center p-2">Login to your account</p>
                     </div>
                 </div>
             </div>
@@ -34,13 +30,14 @@
                         <div class="col-12 col-lg-5">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="row gy-3 overflow-hidden">
+                                <div class="row gy-3 overflow-hidden border p-5 rounded-3 shadow">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="email" class="form-control border-0 border-bottom rounded-0"
                                                 name="email" id="email" placeholder="name@example.com" required
                                                 autofocus>
-                                            <label for="email" class="form-label">Email</label>
+                                            <label for="email" class="form-label"><i class="fa-solid fa-user"></i>
+                                                Email</label>
                                             @error('email')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -50,7 +47,8 @@
                                         <div class="form-floating mb-3">
                                             <input type="password" class="form-control border-0 border-bottom rounded-0"
                                                 name="password" id="password" placeholder="Password" required>
-                                            <label for="password" class="form-label">Password</label>
+                                            <label for="password" class="form-label"><i class="fa-solid fa-key"></i>
+                                                Password</label>
                                             @error('password')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -81,10 +79,13 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="d-grid">
-                                            <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">Log
+                                            <button class="btn btn-lg btn-dark rounded-2 fs-6" type="submit">Log
                                                 in</button>
                                         </div>
                                     </div>
+                                    <p class="text-center p-3 m-0">Don't have an account? <a
+                                            href="{{ route('register') }}">Sign up</a>
+                                    </p>
                                 </div>
                             </form>
                         </div>
@@ -99,19 +100,14 @@
                         <div class="col-12 col-lg-5 d-flex align-items-center">
                             <div class="d-flex gap-3 flex-column w-100">
                                 <a href="#!"
-                                    class="btn bsb-btn-2xl btn-outline-dark rounded-0 d-flex align-items-center">
+                                    class="btn bsb-btn-2xl btn-outline-dark rounded-2 d-flex align-items-center">
                                     <i class="fab fa-google text-danger"></i>
                                     <span class="ms-2 fs-6 flex-grow-1">Continue with Google</span>
                                 </a>
                                 <a href="#!"
-                                    class="btn bsb-btn-2xl btn-outline-dark rounded-0 d-flex align-items-center">
+                                    class="btn bsb-btn-2xl btn-outline-dark rounded-2 d-flex align-items-center">
                                     <i class="fab fa-telegram text-primary"></i>
                                     <span class="ms-2 fs-6 flex-grow-1">Continue with Telegram</span>
-                                </a>
-                                <a href="#!"
-                                    class="btn bsb-btn-2xl btn-outline-dark rounded-0 d-flex align-items-center">
-                                    <i class="fab fa-facebook text-primary"></i>
-                                    <span class="ms-2 fs-6 flex-grow-1">Continue with Facebook</span>
                                 </a>
                             </div>
                         </div>

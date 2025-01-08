@@ -1,0 +1,6 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+* {
+    font-family: "SF Pro Display", sans-serif;
+    transition: all 0.6s;
+}
